@@ -1,0 +1,117 @@
+.simple_container {
+	position: relative;
+}
+
+.simple_pgContainer {
+	min-height:100px;
+	_height:100px;
+}
+
+.simple_pgToolbar {
+	height:30px;
+	valign:middle;
+	font-size:12px;
+	border-top:1px solid #DADADA;
+	background: url(../images/bg.gif);
+	margin:10px 0 -1px 0;
+}
+
+.simple_pgToolbar td {
+	font-size:12px;
+	padding:0 1px 0 1px;
+	text-align:center;
+}
+
+.simple_pgPanel {
+	padding:0 10px 0 10px;
+	margin-top:5px;
+}
+
+.simple_pgBtn {
+	width: 20px;
+	height: 20px;
+	display: block;
+	cursor: pointer;
+	margin:1px;
+}
+
+.simple_pgPress {
+	margin:2px 0 0 2px;
+}
+
+.simple_pgPrev {
+	background: url(../images/prev.gif) no-repeat center;
+}
+
+.simple_pgPrevDisabled {
+	background: url(../images/prev_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.simple_pgNext {
+	background: url(../images/next.gif) no-repeat center;
+}
+
+.simple_pgNextDisabled{
+	background: url(../images/next_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.simple_pgFirst {
+	background: url(../images/first.gif) no-repeat center;
+}
+
+.simple_pgFirstDisabled {
+	background: url(../images/first_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.simple_pgLast {
+	background: url(../images/last.gif) no-repeat center;
+}
+
+.simple_pgLastDisabled {
+	background: url(../images/last_disabled.gif) no-repeat center;
+	cursor:auto;
+}
+
+.simple_pgRefresh {
+	background: url(../images/nowait.gif) no-repeat center;
+}
+
+.simple_pgLoad {
+	background: url(../images/loading.gif) no-repeat center;
+}
+
+.simple_pgCurrentPage {
+	width:30px;
+	height:16px;
+	line-height:16px;
+	text-align:center;
+	border:1px solid #CCCCCC;
+	background:url(../images/text_bg.gif) repeat-x;
+}
+
+.simple_pgSearchInfo {
+	padding-left:20px;
+}
+
+.simple_mask {
+	width: 100%;
+	height: 100%;
+	background: url(../images/loading.gif) no-repeat center;
+	background-color: #FFFFFF;
+	position: absolute;
+	z-index: 999;
+	top:0;
+	left:0;
+	filter:alpha(opacity=70);
+	-moz-opacity:0.70;
+	opacity:.70;
+}
+
+.simple_separator {
+	width:2px;
+	height:20px;
+	background: url(../images/separator.gif) no-repeat center;
+}

@@ -1,0 +1,101 @@
+.box_pagination .default_page_box {
+    height:35px;
+    font-size:12px;
+    border:1px solid #DADADA;
+    background: url(../images/bg.gif);
+    padding: 0 5px;
+}
+
+.box_pagination .default_page_box div {
+    float: left;
+}
+
+.box_pagination .default_first {    
+    background: url(../images/first.gif) no-repeat left;
+    text-align: right;
+}
+
+.box_pagination .default_first_disable {    
+    background-image: url(../images/first_disabled.gif);
+    background-color: #B3B3B3 !important;
+    color: #DADADA !important;
+}
+
+.box_pagination .default_prev {    
+    background: url(../images/prev.gif) no-repeat left;
+    text-align: right;
+}
+
+.box_pagination .default_prev_disable {    
+    background-image: url(../images/prev_disabled.gif);
+    background-color: #B3B3B3 !important;
+    color: #DADADA !important;
+}
+
+.box_pagination .default_next {    
+    background: url(../images/next.gif) no-repeat right;
+    text-align: left;
+}
+
+.box_pagination .default_next_disable {    
+    background-image: url(../images/next_disabled.gif);
+    background-color: #B3B3B3 !important;
+    color: #DADADA !important;
+}
+
+.box_pagination .default_last {    
+    background: url(../images/last.gif) no-repeat right;
+    text-align: left;
+}
+
+.box_pagination .default_last_disable {    
+    background-image: url(../images/last_disabled.gif);
+    background-color: #B3B3B3 !important;
+    color: #DADADA !important;
+}
+
+.box_pagination .default_btn {
+    width: 49px;
+    height: 21px;
+    line-height: 21px;
+    cursor: pointer;
+    border: 1px solid #0054AE;
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 5px / 5px;
+    margin: 4px 5px;
+    padding: 2px 5px;
+    background-color: #ffaf0f;
+}
+
+.box_pagination .default_btn:hover {
+    border-color: #cd0a0a;
+    color: #cd0a0a;
+    background-color: #ffffff;
+}
+
+
+.box_pagination .default_separator {
+    margin: 0 5px;
+    width: 2px;
+    height: inherit;
+    /*    height: 100%;*/
+    background: url(../images/separator.gif) no-repeat center;
+}
+
+.box_pagination .default_separator {
+    margin: 0 5px;
+    width: 2px;
+    height: inherit;
+    /*    height: 100%;*/
+    background: url(../images/separator.gif) no-repeat center;
+}
+
+.box_pagination .default_page_num_box,
+.box_pagination .default_info_num_box,
+.box_pagination .default_page_per_box {
+    line-height: 35px;
+}
+
+.box_pagination .default_page_per_box {
+    float: right !important;
+}

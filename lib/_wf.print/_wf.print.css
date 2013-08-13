@@ -1,0 +1,81 @@
+@media print {    
+    .body4print {
+        background: none !important;
+    }
+
+    .box_print {
+        margin: 0 auto !important;
+        min-height: 0  !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    iframe.box_print {
+        display: none !important;
+    }
+
+    .box_print_btn {
+        display: none !important;
+    }
+
+    #box_loading {
+        display: none !important;
+    }
+}
+
+.body4print {
+    background-color: #999;
+}
+
+.box_print {
+    margin: 10px auto;
+    width: 794px;
+    min-height: 1123px;
+    background-color: #FFFFFF;
+    background-image: url(./img/print_page_line.png);
+    box-shadow: 0 0 20px #000;    
+}
+
+.box_print.landscape {    
+    width: 1123px;
+    min-height: 794px;
+    background-image: url(./img/print_page_line_landscape.png);
+}
+
+iframe.box_print {
+    display: block;
+}
+
+.box_print_btn {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    top: 15px;
+    right: 15px;
+    position: fixed;
+    background: rgba(250, 250, 250, 0.75);
+}
+
+.box_print_btn div {
+    margin: 15px 10px;
+    height: 32px;
+    width: 70px;
+    opacity: 0.75;
+    cursor: pointer;
+    line-height: 32px;
+    text-align: right;
+    color: #000000;    
+    font-family: "微软雅黑";
+}
+
+.box_print_btn div:hover {
+    opacity: 1;
+    color: #FF0000;
+}
+
+.box_print_btn .print {
+    background: url(./img/icon-print.png) no-repeat center left;
+}
+
+.box_print_btn .close {
+    background: url(./img/icon-close.png) no-repeat center left;
+}

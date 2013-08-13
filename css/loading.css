@@ -1,0 +1,43 @@
+body {
+    _width: 100%;
+    _height: 100%;
+}
+
+#box_loading {
+    z-index: 10000;
+    position: fixed;
+    _position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    filter: Alpha(opacity=62);
+    -moz-opacity: 0.618;
+    opacity: 0.618;
+}
+
+#box_loading .logo {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF url("../img/loading.gif") center no-repeat;
+}
+
+#box_loading .info {    
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    padding: 0;
+    margin-top: -15px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
