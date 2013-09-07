@@ -734,9 +734,7 @@ _info.file.upload_set = function(arr) {
     _info.file.dom_set(arr);
 };
 
-_info.file.down = function(dom) {
-    var xid = $(dom).attr('data-xid');    
-    
+_info.file.down = function(xid) {
     if (!xid || isNaN(xid)) {
         return;
     }
@@ -908,6 +906,7 @@ _info.exist_func = function(arr) {
     }
 };
 
-function down(dom) {
-    _info.file.down(dom);
+function down(dom) {    
+    var xid = $(dom).attr('data-xid'); 
+    _info.file.down(xid);
 };
