@@ -473,9 +473,6 @@ _info.save = function() {
             val = _wf.encode(val);
         }
 
-        if (val) {
-            val = val.replace(/['\x22]/g, '');
-        }
         _info.arr[key] = val;
     });
 
@@ -502,7 +499,30 @@ _info.save = function() {
         _wf.loading.hide();
         return;
     }
+    
+    var data;
+    var a = {
+        '%22': '0',
+        '%2C': '1',
+        '%3A': '2',
+        '%5B': '3',
+        '%5D': '4',
+        '%7B': '5',
+        '%7D': '6'
+    };
+    var b = _wf.str_shuffle('^`$<,>@:').split('');
 
+    data = _wf.json.encode(_info.arr);
+    data = encodeURIComponent(data);
+    data = data.replace(/\%22|\%2C|\%3A|\%5B|\%5D|\%7B|\%7D/g, function(c) {
+        return b[a[c]];
+    });
+//    data = data.replace(/\%/g, b[7]);
+//    data = data.split('').reverse().join('');
+//    data = 'wf' + data + b.join('');
+    _wf.log(_info.arr);
+    _wf.log(data);
+//    _wf.log(_wf.encode(_info.arr));
     _info.save_ajax();
 };
 
@@ -525,6 +545,7 @@ _info.save_ajax = function() {
             'info': _info.arr
         },
         'func': function(data) {
+            alert(1);
             if (data) {          
                 _info.save_ok(data);
             } else {

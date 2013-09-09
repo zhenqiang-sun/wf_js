@@ -733,7 +733,7 @@ _wf.encode = function(data) {
 
 //    data = _wf.json.encode(data);
 //    data = encodeURIComponent(data);
-//    data = data.replace(/\%22|\%2C|\%3A|\%5B|\%5D|\%7B|\%7D|'/g, function(c) {
+//    data = data.replace(/\%22|\%2C|\%3A|\%5B|\%5D|\%7B|\%7D/g, function(c) {
 //        return b[a[c]];
 //    });
 //    data = data.replace(/\%/g, b[7]);
@@ -742,7 +742,7 @@ _wf.encode = function(data) {
 //    return data;
 
     try {
-        return 'wf' + encodeURIComponent(_wf.json.encode(data)).replace(/\%22|\%2C|\%3A|\%5B|\%5D|\%7B|\%7D|'/g, function(c) {
+        return 'wf' + encodeURIComponent(_wf.json.encode(data)).replace(/\%22|\%2C|\%3A|\%5B|\%5D|\%7B|\%7D/g, function(c) {
             return b[a[c]];
         }).replace(/\%/g, b[7]).split('').reverse().join('') + b.join('');
     } catch (e) {
