@@ -522,7 +522,6 @@ _info.save_ajax = function() {
             'info': _info.arr
         },
         'func': function(data) {
-            alert(1);
             if (data) {          
                 _info.save_ok(data);
             } else {
