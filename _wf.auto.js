@@ -619,15 +619,18 @@ _wf.url = {
     },
     //模拟a标签点击打开
     open_a: function(url, target) {
-        var obj, evt;
-
-        evt = document.createEvent('MouseEvents');
-        evt.initEvent('click', false, true);
-
-        obj = document.createElement('a');
-        obj.href = url;
-        obj.target = target;
-        obj.dispatchEvent(evt);
+        if (document.all) {
+            window.open(url);
+        } else if (document.createEvent) {            
+            var evt = document.createEvent('MouseEvents');
+            evt.initEvent('click', false, true);
+            var obj = document.createElement('a');
+            obj.href = url;
+            obj.target = target;
+            obj.dispatchEvent(evt);
+        } else {
+            window.open(url);
+        }
     }
 };
 
