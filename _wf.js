@@ -28,7 +28,7 @@ _wf.cfg = {
     //定义：框架访问路径，动态生成
     url: '',
     //定义：框架发布域名，用来判断是否加载jquery等cdn文件
-    domain: 'js',
+    domain: 'wfjs',
     //定义：点击事件的处理方式，根据设备判断
     click: 'click',
     //定义：loading过门，从_cfg中取值

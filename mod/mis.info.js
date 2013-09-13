@@ -286,7 +286,7 @@ _info.info_set = function() {
     }
 };
 
-_info.state_name = 'viwe';
+_info.state_name = 'view';
 _info.state_label = {
     'add': '新增',
     'del': '删除：',
@@ -313,12 +313,12 @@ _info.state = function(state) {
 };
 
 //新增事件
-_info.add = function() {
+_info.add = function() {    
+    _info.state('add');
     _info.set();
 
     _wf.dom.disable('#btn_add, #btn_del, #btn_edit, #btn_view, #btn_show');
 
-    _info.state('add');
     _info.editable(true);
 
     if (_i_.user_id) {
@@ -330,10 +330,10 @@ _info.add = function() {
 
 //删除事件
 _info.del = function() {
+    _info.state('del');
     _info.set();
 
     $('.add_hide').show();    
-    _info.state('del');
 
     if (true != confirm('确定删除“' + _info.label + '”吗？')) {
         if ('del' == _i_.act) {
@@ -348,6 +348,7 @@ _info.del = function() {
 
 //修改事件
 _info.edit = function() {
+    _info.state('edit');
     _info.set();
 
     $('.add_hide').show();
@@ -355,7 +356,6 @@ _info.edit = function() {
     _wf.dom.enable('#btn_view');
 
     _info.box.find('tfoot').show();
-    _info.state('edit');
     _info.editable(true);
 
     _info.file.state();
@@ -363,6 +363,7 @@ _info.edit = function() {
 
 //修改查看事件
 _info.view = function() {
+    _info.state('view');
     _info.set();
 
     $('.add_hide').show();
@@ -370,7 +371,6 @@ _info.view = function() {
     _wf.dom.disable('#btn_view');
 
     _info.box.find('tfoot').hide();
-    _info.state('view');
     _info.editable(false);
 
     _info.file.state();

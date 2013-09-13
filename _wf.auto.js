@@ -40,7 +40,9 @@ _wf.dom = {
             return '';
         }
 
-        if (/text|number|select-one|hidden|button|password/.test(obj[0].type)) {
+        if ('text/plain' == obj[0].type) {
+            return obj.text();
+        } else if (/text|number|select-one|hidden|button|password/.test(obj[0].type)) {
             return obj.val();
         } else if ('radio' == obj[0].type) {
             obj.each(function() {
@@ -72,13 +74,15 @@ _wf.dom = {
     //赋值
     set: function(key, val) {
         var obj = $(key);
-
+        
         //判断是否存在，不存在则退出
         if (!obj[0]) {
             return;
         }
 
-        if (/text|number|select-one|hidden|button|password|textarea/.test(obj[0].type)) {
+        if ('text/plain' == obj[0].type) {
+            obj.text(val);
+        } else if (/text|number|select-one|hidden|button|password|textarea/.test(obj[0].type)) {
             obj.val(val);
         } else if ('radio' == obj[0].type) {
             obj.each(function() {
@@ -93,7 +97,7 @@ _wf.dom = {
                 obj.prop('checked', true);
             } else {
                 obj.prop('checked', false);
-            }
+            }            
         } else if (obj['0'] == '[object HTMLImageElement]') {
             obj.attr('src', val);
         } else {
