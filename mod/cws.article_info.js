@@ -10,7 +10,6 @@ _article_info.data = {};
 
 _article_info.init = function() {    
     if (_wf.app.make != '1') {
-        _wf.css.get(_wf.cfg.url + '/css/down_ico.css');
         _article_info.get();
     } else {
         _article_info.remake();
