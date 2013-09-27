@@ -145,14 +145,21 @@ _master.title_change = function() {
 
 _master.hits = function() {
     var xid;
+    var xtb = '';
+    
     xid = _wf.url.get('xid');
 
+    if (typeof _index == 'object' || typeof _search == 'object') {
+        xid = _wf.app.id;
+        xtb = 'site';
+    } else if (typeof _article_info == 'object') {
+        xtb = 'article';
+    } else if (typeof _article_list == 'object') {
+        xtb = 'type';
+    }
+    
     if (!xid) {
-        if (_wf.app.name == 'index') {
-            xid = _wf.app.id;
-        } else {
-            return;
-        }
+        return;
     }
 
     _wf.ajax({
@@ -161,7 +168,9 @@ _master.hits = function() {
             'act': 'hits_read',
             'sid': _wf.app.id,
             'xid': xid,
-            'referrer': document.referrer
+            'xtb': xtb,
+            'referrer': document.referrer,
+            'label': document.title
         },
         'func': function(data) {
             _master.hits_set(data);
