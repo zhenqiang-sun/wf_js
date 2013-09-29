@@ -422,7 +422,12 @@ _wf.init = function() {
     _wf.cfg.init();
 
     //初始化_wf.app
-    _wf.app.init();
+    _wf.app.init();    
+
+    //加载：json。判断浏览器本身是否支持json，不支持则加载
+    if (typeof window.JSON != 'object') {
+        _wf.js.load_lib('json');
+    }
     
     if (_wf.app.make == '1') {
         _wf.loading.init();
@@ -444,11 +449,6 @@ _wf.init = function() {
     }    
     
     _wf.init_self();
-
-    //加载：json。判断浏览器本身是否支持json，不支持则加载
-    if (typeof window.JSON != 'object') {
-        _wf.js.load_lib('json');
-    }
 
     //加载：jquery
     if (_cfg.lib_jquery != false) {

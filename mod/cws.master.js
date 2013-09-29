@@ -143,19 +143,23 @@ _master.title_change = function() {
     }
 };
 
-_master.hits = function() {
-    var xid;
-    var xtb = '';
-    
-    xid = _wf.url.get('xid');
+_master.hits = function(xid, xtb) {    
+    if (!xid) {
+        if (typeof _index == 'object' || typeof _search == 'object') {
+            xid = _wf.app.id;
+        } else {
+            xid = _wf.url.get('xid');
+        }      
+    }
 
-    if (typeof _index == 'object' || typeof _search == 'object') {
-        xid = _wf.app.id;
-        xtb = 'site';
-    } else if (typeof _article_info == 'object') {
-        xtb = 'article';
-    } else if (typeof _article_list == 'object') {
-        xtb = 'type';
+    if (xtb) {        
+        if (typeof _index == 'object' || typeof _search == 'object') {
+            xtb = 'site';
+        } else if (typeof _article_info == 'object') {
+            xtb = 'article';
+        } else if (typeof _article_list == 'object') {
+            xtb = 'type';
+        }
     }
     
     if (!xid) {
