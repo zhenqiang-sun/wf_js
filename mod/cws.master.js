@@ -151,19 +151,19 @@ _master.hits = function(xid, xtb) {
             xid = _wf.url.get('xid');
         }      
     }
+        
+    if (!xid) {
+        return;
+    }
 
-    if (xtb) {        
-        if (typeof _index == 'object' || typeof _search == 'object') {
-            xtb = 'site';
-        } else if (typeof _article_info == 'object') {
+    if (!xtb) {        
+        if (typeof _article_info == 'object') {
             xtb = 'article';
         } else if (typeof _article_list == 'object') {
             xtb = 'type';
+        } else {
+            xtb = 'site';
         }
-    }
-    
-    if (!xid) {
-        return;
     }
 
     _wf.ajax({
@@ -202,3 +202,4 @@ _master.down = function(dom) {
 
 _i_.down = _master.down;
 _i_.title_change = _master.title_change;
+_i_.hits = _master.hits;
